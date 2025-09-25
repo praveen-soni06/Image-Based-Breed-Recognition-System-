@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Breed Recognition App - Prototype</title>
+  <link rel="stylesheet" href="minor.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      <h1>Breed Recognition</h1>
+    </div>
+    <div class="nav-right">
+      <a onclick="showSection('home', event)" class="active">Home</a>
+      <a onclick="showSection('gallery', event)">Breeds</a>
+      <a onclick="showSection('recognition', event)">Recognition</a>
+      <a onclick="showSection('login', event)">Login</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div id="home" class="section active hero">
+    <div class="hero-content">
+      <h2>Welcome to Breed Recognition</h2>
+      <p>
+        AI-powered tool to identify <b>cattle and buffalo breeds of India</b>.
+        Designed for <b>Field Level Workers (FLWs)</b>, farmers, and officials to make livestock registration accurate and fast.
+      </p>
+      <button onclick="showSection('recognition', event)">Try Recognition Tool</button>
+    </div>
+  </div>
+
+  <!-- Breed Gallery -->
+  <div id="gallery" class="section">
+    <h2 class="section-title">Popular Breeds of India</h2>
+    <p class="section-subtitle">Explore the diversity of Indian cattle and buffalo breeds — each card contains short notes on traits and origin.</p>
+
+    <div class="gallery-grid">
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/67MvTRHIuJK0zqcaQ5hkmP1q9Qs8-1x0BBmLdTmru0Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0Lzk4LzczLzg0/LzM2MF9GXzQ5ODcz/ODQ0Nl9adU1CSDU0/SUJUanc4SFB4QmFV/b3FOS0JqaWpsdjZL/UC5qcGc" alt="Gir Cow">
+        <h3>Gir</h3>
+        <p>Region: Gujarat · Trait: High milk yield & disease resistance.</p>
+      </div>
+
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/nmkqH33KueIZmW6pRqumiNDqsfFFTOcyKSwoWGCTVXI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81Lmlt/aW1nLmNvbS9kYXRh/NS9YTS9HVi9NWS01/NTAyMjQ4Ny9tdXJy/YWgtYnVsYnVsLWJ1/bGwtcHJpY2UtODBr/LTQtNTAweDUwMC5q/cGc" alt="Murrah Buffalo">
+        <h3>Murrah</h3>
+        <p>Region: Haryana/Punjab · Trait: High-fat milk, very popular buffalo breed.</p>
+      </div>
+
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/7k20eio2i9g5nHV7ue_smboNJqPgzPMXfp5iy6NYT7Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aWlt/Zy50aXN0YXRpYy5j/b20vZnAvMS8wMDMv/OTg4L2ZyZWUtZnJv/bS1hbnktZGlzZWFz/ZXMtc2FoaXdhbC1j/b3ctODAyLmpwZw" alt="Sahiwal Cow">
+        <h3>Sahiwal</h3>
+        <p>Region: Punjab · Trait: High milk production, calm temperament.</p>
+      </div>
+
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/OrwGA3GH2L_IDcYKysNQaN9Wy3wvDSmDJ9dBVrOk7Po/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9icmVl/ZHMub2tzdGF0ZS5l/ZHUvY2F0dGxlL3Np/dGUtZmlsZXMvaW1h/Z2VzL2thbmtyZWou/anBn" alt="Kankrej">
+        <h3>Kankrej</h3>
+        <p>Region: Gujarat/Rajasthan · Trait: Dual-purpose (milk & draught).</p>
+      </div>
+
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/g6RCJ0RqyxfXcn-bE6iBEnZhv8SDuIso248UIJf4k1I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aWlt/Zy50aXN0YXRpYy5j/b20vZnAvMS8wMDUv/NzQxL2hlYWx0aHkt/dGhhcnBhcmthci1k/YWlyeS1jb3ctMjI5/LmpwZw" alt="Tharparkar">
+        <h3>Tharparkar</h3>
+        <p>Region: Rajasthan · Trait: Drought tolerant, hardy dairy breed.</p>
+      </div>
+
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/s40Jta-FWPwOpPWOsFkQ6t3A0n0z_lOD0iE4Nx3G9Lc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jcGlt/Zy50aXN0YXRpYy5j/b20vMDM4NDM0NDgv/Yi81L01laHNhbmEt/QnVmZmFsby5qcGc" alt="Mehsana Buffalo">
+        <h3>Mehsana</h3>
+        <p>Region: Gujarat · Trait: High butterfat content in milk.</p>
+      </div>
+
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/DoSq59fSmXxKJXRe0m_NoZLin3GHqIMzyzo_kyGgVys/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vo/VHdwNnNOMUZtVF9Q/VV9SLVZoMTEtR19F/SVN0anExNEVtMVZN/YVctVlFLRENReEdS/LUVMZEdVQjFmdjYw/dGdra1J6TWhlNTdX/TmVPM29LV3hBYTdM/SlY4ZkhkNjhUbm9j/WFRBNEFMd2hBMlBP/ZElsbW51NXBBMTNl/MEtiX2VZeUlkRkxz/dUtTWm5JQmx2MEM1/bHJRTnZDQW5jV0sw/bFNMTnZmVlhHVVh5/Qk9ZVU5lT0JHQjBa/dENIVnIvczYwMC9S/ZWQlMjBTaW5kaGkl/MjBDb3cuanBn" alt="Red Sindhi">
+        <h3>Red Sindhi</h3>
+        <p>Region: Sindh · Trait: Fertility & adaptability in tropical climates.</p>
+      </div>
+
+      <div class="breed-card">
+        <img src="https://imgs.search.brave.com/XEwbT9nq-fgLDUxEd_JORrM7tCkP89dHFaV_r3GFQyU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aWlt/Zy50aXN0YXRpYy5j/b20vZnAvMS8wMDYv/OTQyL2hlYWx0aHkt/b25nb2xlLWNvdy0x/MzQuanBn" alt="Ongole Bull">
+        <h3>Ongole</h3>
+        <p>Region: Andhra Pradesh · Trait: Strong draught breed, disease resistant.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recognition Tool -->
+  <div id="recognition" class="section">
+    <div class="card">
+      <h2>Breed Recognition Tool</h2>
+      <input type="file" id="imageInput" accept="image/*"><br>
+      <img id="preview" src="" alt="Image Preview" hidden>
+      <br>
+      <button onclick="predictBreed()">Predict Breed</button>
+      <p class="result" id="result"></p>
+    </div>
+  </div>
+
+  <!-- Team Section
+  <div id="team" class="section">
+    <h2 class="section-title">Meet Our Team</h2>
+    <div class="gallery-grid">
+      <div class="team-card">
+        <img src="https://i.pravatar.cc/250?img=1" alt="Aditya Singh">
+        <h3>Aditya Singh</h3>
+        <p><b>Team Leader</b><br>Coordinates project tasks, manages workflow and stakeholder comms.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://i.pravatar.cc/250?img=2" alt="Riya Sharma">
+        <h3>Riya Sharma</h3>
+        <p><b>AI/ML Developer</b><br>Builds & optimizes the breed recognition models.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://i.pravatar.cc/250?img=3" alt="Arjun Mehta">
+        <h3>Arjun Mehta</h3>
+        <p><b>Frontend Developer</b><br>Implementing UI/UX and responsive interactions.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://i.pravatar.cc/250?img=4" alt="Priya Verma">
+        <h3>Priya Verma</h3>
+        <p><b>Backend Engineer</b><br>APIs, authentication and data storage.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://i.pravatar.cc/250?img=5" alt="Rohan Gupta">
+        <h3>Rohan Gupta</h3>
+        <p><b>Data Analyst</b><br>Data collection, cleaning and annotation.</p>
+      </div>
+      <div class="team-card">
+        <img src="https://i.pravatar.cc/250?img=6" alt="Anjali Nair">
+        <h3>Anjali Nair</h3>
+        <p><b>Tester</b><br>QA, testing and bug verification.</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Signup -->
+<div id="signup" class="section">
+    <div class="auth-card"></div>
+      <div class="auth-card">
+        <h2 id="signupHeading">User Sign Up/login</h2>
+        <div class="role-toggle">
+          <button onclick="switchRole('signup','User', event)" class="toggle-btn active">User</button>
+          <button onclick="switchRole('signup','Admin', event)" class="toggle-btn">Admin</button>
+        </div>
+        <form id="signupForm">
+          <input type="text" id="signupName" placeholder="Full Name" required>
+          <input type="email" id="signupEmail" placeholder="Email" required>
+          <input type="password" id="signupPassword" placeholder="Password" required>
+          <button type="submit">Create Account</button>
+        </form>
+        <p id="signupMsg" class="msg"></p>
+      </div>
+    </div>
+  </div> 
+
+  <!-- Login -->
+  <div id="login" class="section">
+    <div class="auth-container">
+      <div class="auth-card">
+        <h2 id="loginHeading">User Sign up/ Login</h2>
+        <div class="role-toggle">
+          <button onclick="switchRole('login','User', event)" class="toggle-btn active">User</button>
+          <button onclick="switchRole('login','Admin', event)" class="toggle-btn">Admin</button>
+        </div>
+        <form id="loginForm">
+          <input type="email" id="loginEmail" placeholder="Email" required>
+          <input type="password" id="loginPassword" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <p id="loginMsg" class="msg"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Breed Recognition Prototype | SIH Team Intellifusion
+  </footer>
+
+  <script src="minor.js"></script>
+</body>
+</html>
