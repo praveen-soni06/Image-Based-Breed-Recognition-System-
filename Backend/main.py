@@ -11,8 +11,8 @@ import pickle
 from pathlib import Path
 
 # -------- CONFIG --------
-MODEL_PATH = Path("D:/SH/code/ML Model/best_breed_model1.pth")
-LE_PATH = Path("D:/SH/code/ML Model/label_encoder.pkl")
+MODEL_PATH = Path("D:/SH/SIH2025/ML Model/best_breed_model1.pth")
+LE_PATH = Path("D:/SH/SIH2025/ML Model/label_encoder.pkl")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # -------- LOAD MODEL --------
